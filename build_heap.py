@@ -6,8 +6,7 @@ def build_heap(data):
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
     dataSorted = sorted(data)
-    if len(data) != len(dataSorted):
-        return
+    lenSorted = len(dataSorted)
 
     def isMinHeap():
         for i in range(0, len(data)-3):
@@ -36,7 +35,6 @@ def build_heap(data):
 
     count = 0
     while not isMinHeap():
-        print(count)
         minValue = dataSorted[count] # min(data) nextmin?
         minIndex = data.index(minValue)
 
@@ -48,7 +46,10 @@ def build_heap(data):
             minIndex = data.index(minValue)
             parentIndex = parent(minIndex)
 
+        # print(count)
         count+=1
+        if(count>lenSorted-1):
+            break
 
     return swaps
 
