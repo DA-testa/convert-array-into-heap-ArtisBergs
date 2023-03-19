@@ -46,7 +46,6 @@ def build_heap(data):
             minIndex = data.index(minValue)
             parentIndex = parent(minIndex)
 
-        # print(count)
         count+=1
         if(count>lenSorted-1):
             break
